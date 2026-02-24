@@ -38,9 +38,9 @@ I created a tool to help me generate the language for these policies.
 
 You'll see in a moment that I created this tool using the same 'hands-off' process that I am going to show you how to do today. 
 
-[Show Assignment Description 1](https://lms.carthage.edu/assignment/8181773963/info)
-[Show Assignment Description 2](https://lms.carthage.edu/assignment/8194520110/info)
-[Show Assignment Description 3](https://lms.carthage.edu/assignment/8207255570/info)
+- [Show Assignment Description 1](https://lms.carthage.edu/assignment/8181773963/info)
+- [Show Assignment Description 2](https://lms.carthage.edu/assignment/8194520110/info)
+- [Show Assignment Description 3](https://lms.carthage.edu/assignment/8207255570/info)
 
 I have found that students feel relieved to have clear guidelines about how they can use AI. 
 
