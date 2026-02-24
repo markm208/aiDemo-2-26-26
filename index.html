@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using AI to Build Interactive Classroom Tools</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            color: #333;
+        }
+        h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.25rem;
+            color: #1a1a1a;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .handout-url {
+            position: relative;
+            display: inline-block;
+        }
+        .handout-url a {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 1.25rem;
+            text-decoration: none;
+        }
+        .handout-url::after {
+            content: "← Follow Along Here";
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-left: 0.75rem;
+            background: #457b9d;
+            color: #fff;
+            padding: 0.4rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .handout-url:hover::after {
+            opacity: 1;
+        }
+        h2 {
+            font-size: 1.1rem;
+            margin-top: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: #1a1a1a;
+            border-bottom: 2px solid #e63946;
+            padding-bottom: 0.25rem;
+        }
+        .tools {
+            display: grid;
+            gap: 0.75rem;
+        }
+        .tool {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid #e63946;
+        }
+        .tool-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .tool-desc {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+        .tool a {
+            font-size: 0.85rem;
+            color: #e63946;
+            word-break: break-all;
+        }
+        .tool .secondary-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: #457b9d;
+            background: #e8f4f8;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .tool .secondary-link:hover {
+            background: #d1e9f0;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        @media (max-width: 600px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+        .col h3 {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            color: #2a9d8f;
+        }
+        .col ul {
+            font-size: 0.9rem;
+            padding-left: 1.25rem;
+        }
+        .col li {
+            margin-bottom: 0.35rem;
+        }
+        .process {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+        }
+        .process ol {
+            padding-left: 1.25rem;
+            font-size: 0.9rem;
+        }
+        .process li {
+            margin-bottom: 0.5rem;
+        }
+        .callout {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin-top: 0.75rem;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.9rem;
+        }
+        code {
+            background: #e9ecef;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .footer {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+            font-size: 1.15rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Using AI to Build Interactive Classroom Tools</h1>
+    <p class="subtitle">Mark Mahoney &bull; Teaching Commons &bull; Feb. 26, 2026</p>
+    <p class="handout-url"><a href="https://markm208.github.io/aiDemo" target="_blank">markm208.github.io/aiDemo</a></p>
+
+    <h2>Tools from Today's Session</h2>
+    <div class="tools">
+        <div class="tool">
+            <div class="tool-name">AI Policy Generator</div>
+            <div class="tool-desc">Create clear AI use policies for your assignments (No AI / Planning Only / Allowed)</div>
+            <a href="https://markm208.github.io/aiPolicyGenerator/ai-policy-generator.html" target="_blank">markm208.github.io/aiPolicyGenerator/ai-policy-generator.html</a>
+        </div>
+        <div class="tool">
+            <div class="tool-name">Git Workflow Simulator</div>
+            <div class="tool-desc">Interactive visualization of team software development workflow</div>
+            <a href="https://markm208.github.io/vibeCodingInClassTools/git-workflow-simulator.html" target="_blank">markm208.github.io/vibeCodingInClassTools/git-workflow-simulator.html</a>
+        </div>
+        <div class="tool">
+            <div class="tool-name">CLI Mountain Explorer</div>
+            <div class="tool-desc">Learn command-line navigation through a hiking analogy</div>
+            <a href="https://markm208.github.io/vibeCodingInClassTools/cli-hiker.html" target="_blank">markm208.github.io/vibeCodingInClassTools/cli-hiker.html</a>
+            <br><a href="conversation-log.html" target="_blank" class="secondary-link">View the 29-step conversation that built this tool →</a>
+        </div>
+    </div>
+
+    <h2>How I Use AI in Teaching</h2>
+    <div class="two-col">
+        <div class="col">
+            <h3>I do use AI to...</h3>
+            <ul>
+                <li>Review and clarify my lecture notes</li>
+                <li>Generate ideas for activities and assignments</li>
+                <li>Create exam questions and distractors</li>
+                <li>Get advice on teaching challenges</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3>I don't use AI to...</h3>
+            <ul>
+                <li>Write my lecture content</li>
+                <li>Write code I present in class</li>
+                <li>Grade student work</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>The Process: Building a Tool</h2>
+    <div class="process">
+        <ol>
+            <li><strong>Start with a request:</strong> Ask for a single-page web app (HTML, CSS, JavaScript) that demonstrates your concept</li>
+            <li><strong>Provide context:</strong> Share your lecture notes, analogies, or examples of tools you like</li>
+            <li><strong>Iterate:</strong> Have a conversation! Ask for fixes, new features, and refinements (expect 20-40 rounds)</li>
+            <li><strong>Test and refine:</strong> Use the tool yourself, notice what's confusing, ask for improvements</li>
+            <li><strong>Deploy:</strong> Copy the HTML file to a web server, LMS, or GitHub Pages</li>
+        </ol>
+    </div>
+    <div class="callout">
+        <strong>Key insight:</strong> You don't need to read or write any code. Describe what you see, describe what you want, and let the AI handle the implementation.
+    </div>
+
+    <h2>Step-by-Step Workflow</h2>
+    <div class="process">
+        <ol>
+            <li>Open an AI assistant (<a href="https://claude.ai/new" target="_blank">claude.ai</a>, <a href="https://chat.openai.com" target="_blank">chat.openai.com</a>, <a href="https://gemini.google.com" target="_blank">gemini.google.com</a>) in a browser tab</li>
+            <li>Describe what you want: "Create a single-page web app using HTML, CSS, and JavaScript that demonstrates [your concept]..."</li>
+            <li>The AI responds with code, get it onto your computer using one of these options:
+                <ul style="margin-top: 0.4rem; margin-bottom: 0;">
+                    <li><strong>Download:</strong> Some assistants have a <strong>Download</strong> button, click it and save as <code>myDemo.html</code></li>
+                    <li><strong>Copy/Paste:</strong> Click <strong>Copy</strong>, open a text editor (TextEdit, Notepad), paste, and save as <code>myDemo.html</code></li>
+                </ul>
+            </li>
+            <li>In your file explorer, double-click the file and it will open in your browser</li>
+            <li>Try it out, notice what's wrong or missing</li>
+            <li>Go back to the AI chat and describe the problem: "The button doesn't work" or "Can you make the text bigger?"</li>
+            <li>Download the new code (or copy/paste over the old file), save, refresh the browser</li>
+            <li>Repeat steps 5-7 until you're happy (expect 20-40 iterations)</li>
+        </ol>
+    </div>
+
+    <div class="footer">
+        Questions? Contact Mark Mahoney <a href="mailto:mmahoney@carthage.edu">mmahoney@carthage.edu</a>
+    </div>
+</body>
+</html>
