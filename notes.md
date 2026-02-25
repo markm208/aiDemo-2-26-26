@@ -243,4 +243,6 @@ I hope that this has given you some ideas about how you can use AI to build inte
 ### Questions and Discussion
 I would love to hear your thoughts and questions about this process. 
 
+If you are interested, think of some ideas for a tool that you would like to build for one of your courses. It doesn't have to be anything complicated, just something that would help your students understand a concept better.
+
 Would anyone like to work with me on building a tool for one of your courses with the time that we have left?
