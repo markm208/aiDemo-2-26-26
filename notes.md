@@ -102,6 +102,8 @@ I then have a conversation with the model about how to improve the tool and add 
 
 Here is the log of my conversation with the model as I was building the terminal tool:
 
+---
+
 1. I am working on a command line tutorial for my operating systems course. The file 03_CLITutorial.md has the basics. I was hoping you could write a single page web app using html, css, and javascript that builds on the mountain hiker analogy that I mention in the tutorial. Feel free to build pngs or svgs to help visualize the concepts.
  
 I have another program that I really like that I'd like you to look at and make it feel similar. That program can be found here: '/Users/mmahoney/Dropbox/vibeCodingInClassTools/git-workflow-simulator.html'.
@@ -222,6 +224,8 @@ Also, the whole mountain pic feels a little cramped, can you make it a bit wider
 ### Live step
 29. Add an icon (a gear or something) that when clicked a modal dialog appears with a set of instructions about how to use this tool. Make sure a newcomer will know all of the things that they can do with the tool.
 
+Upload file into Claude:
+/Users/mmahoney/Dropbox/CSC3520/code-examples/hikingCLI/index.html
 
 The conversation went back and forth. I can characterize the communication as:
 - I started by asking for some ideas without really knowing exactly what I wanted. It built something that was interesting but not what I wanted.
