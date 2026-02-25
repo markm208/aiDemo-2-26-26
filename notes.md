@@ -74,13 +74,13 @@ Let me start by showing you an example of a tool that I created for my courses. 
 
 The important thing that I am trying to show in this example is the flow of work on a team of software developers. 
 
-If you are teaching accounting or costume design you will definitely have a different concept that you want to demonstrate, but the process of building the tool will be the same.
-
 #### Demo 1
 - click through all of the buttons to visualize the workflow
 - on the left is a preview of what they should expect
 - on the right is a log of what happened with explanations
 - I discussed all of these steps in a lecture, then before we practiced with the actual tools I had them use this tool with a partner to get them used to these complicated workflows
+
+If you are teaching accounting or costume design you will definitely have a different concept that you want to demonstrate, but the process of building the tool will be the same.
 
 #### Demo 2
 In this next example, I am showing the students how to work from the terminal. I start with a lecture about how using the terminal is like a hiker climbing a mountain. When I was working with the AI coding assistant I gave it my lecture notes and described the analogy and the technical concepts that I wanted to demonstrate.
