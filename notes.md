@@ -12,11 +12,11 @@ Hopefully, at the end there will be time for questions and discussion. However, 
 ### Some Use Cases
 Like many of you, I have been using AI to help me become a better instructor.
 
-I have been using the tools as a helpful assistant, never as the primary source of content.
+I have been using the tools as a helpful assistant, never as the primary source of the content I present to my students.
 
 I am only good at a few things... one of them is teaching people about computer science. 
 
-There is no way that a AI model will be able to do what I do in a classroom. 
+I don't believe that an AI model will ever be able to do what I do in a classroom.
 
 I can: 
 - read a room
@@ -28,9 +28,12 @@ I'm going to start with the things that I will never have AI help me with.
 I do not do things like:
 - Ask an AI model to write my lecture notes for me.
 - Ask an AI model to write code that I will present in class.
+- Generate the programming projects that I give my students
 - Ask an AI model to grade anything for me.
 
-These things are sacred to me. I have a voice and I will never use AI to do these things, this is why I don't just read a textbook aloud to my students.
+These things are **sacred** to me. 
+
+I have a voice and I will never use AI to do these things, this is why I don't just read a textbook aloud to my students.
 
 However, there are some things that an AI assistant can help me do better.
 
@@ -69,6 +72,7 @@ I have been using this process to create:
 - simulations
 - visualizations
 - step-by-step demonstrations 
+
 for my courses. 
 
 These are things that I can explain in a more traditional lecture format (and have done many times in the past), using a whiteboard or slides (or with just a lot of hand-waving). 
@@ -83,7 +87,7 @@ As I mentioned earlier, I use an AI coding assistant to help me build these tool
 
 I could have written the code for these myself manually, but it would take me a lot longer to do it. 
 
-These are not important enough learning experiences for me to do it by hand. 
+These are not important enough learning experiences for me to do it by hand. If the AI coding assistants weren't available I would just do a more traditional lecture about these concepts and maybe draw some diagrams on the board.
 
 The great thing about these coding assistants is that they can create visually appealing and interactive tools with very little to no 'hard' coding on my part.
 
@@ -110,7 +114,7 @@ I give a lecture about this and we practice but this is a nice way to see someth
 If you are teaching accounting or costume design you will definitely have a different concept that you want to demonstrate, but the process of building the tool will be the same.
 
 #### Demo 2
-In this next example, I am showing the students how to work from the terminal. 
+In this next example, I am showing the students how to work from the terminal, or command line interface. 
 
 I start with a lecture about how using the terminal is like a hiker climbing a mountain. 
 
@@ -264,8 +268,7 @@ Also, the whole mountain pic feels a little cramped, can you make it a bit wider
 29. Add an icon (a gear or something) that when clicked a modal dialog appears with a set of instructions about how to use this tool. Make sure a newcomer will know all of the things that they can do with the tool.
 
 Upload file into Claude:
-~~/Users/mmahoney/Dropbox/CSC3520/code-examples/hikingCLI/index.html~~
-file:///Users/mmahoney/Downloads/cli-tutorial.html
+file:///Users/mmahoney/Downloads/commandLineTutorial.html
 
 The conversation went back and forth. I can characterize the communication as:
 - I started by asking for some ideas without really knowing exactly what I wanted. It built something that was interesting but not what I wanted.
@@ -289,3 +292,6 @@ I would love to hear your thoughts and questions about this process.
 If you are interested, think of some ideas for a tool that you would like to build for one of your courses. It doesn't have to be anything complicated, just something that would help your students understand a concept better.
 
 Would anyone like to work with me on building a tool for one of your courses with the time that we have left?
+
+Backup:
+I want a single page web app that uses html, css, and javascript to estimate the value of pi. I want to see a square circumscribed around a circle and I want a button that will randomly drop 10 points on the square. Then, I want a table of the results to show the random X and Y values along with whether the point landed in the circle. Then, use the ratio of points in the circle over the total points to estimate pi.
