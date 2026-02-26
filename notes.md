@@ -14,22 +14,36 @@ Like many of you, I have been using AI to help me become a better instructor.
 
 I have been using the tools as a helpful assistant, never as the primary source of content.
 
-I am only good at a few things (writing programs and teaching others to write programs) and I believe that a generic AI model is not better at those things than I am. However, there are some things that an AI assistant can help me do better.
+I am only good at a few things... one of them is teaching people about computer science. 
 
-I do things like:
-- Have an AI model look at my lecture notes to clear up any confusing language, make them more concise, and look for important elements that are missing.
-- Ask for ideas about in class activities and assignments.
-- Generate questions for written exams and quizzes. Sometimes this is coming up with distractors for multiple choice questions, and sometimes it is generating open ended questions.
-- Ask the AI models for advice and general help with teaching. It often will give me an unbiased and helpful perspective on how to approach a problem.
+There is no way that a AI model will be able to do what I do in a classroom. 
+
+I can: 
+- read a room
+- adjust to what happens in it
+- motivate my students to want to learn (enthusiasm, experience, interesting problems, etc.)
+
+I'm going to start with the things that I will never have AI help me with. 
 
 I do not do things like:
 - Ask an AI model to write my lecture notes for me.
 - Ask an AI model to write code that I will present in class.
 - Ask an AI model to grade anything for me.
 
-In other words, I use AI in areas where I don't feel very confident. I don't use it in areas where I do feel confident.
+These things are sacred to me. I have a voice and I will never use AI to do these things, this is why I don't just read a textbook aloud to my students.
 
-### Setting Expectations
+However, there are some things that an AI assistant can help me do better.
+
+I do things like:
+- Have an AI model look at my lecture notes to clear up any confusing language, make them more concise, and look for important elements that are missing.
+- Generate questions for written exams and quizzes. Sometimes this is coming up with distractors for multiple choice questions, and sometimes it is generating open ended questions.
+- Ask the AI models for advice and general help with teaching. It often will give me an unbiased and helpful perspective on how to approach a problem.
+
+In other words, I use AI in areas where I don't feel the most confident. I don't use it in areas where I do feel confident.
+
+### Setting Expectations 
+I am going to show some examples of tools that I have created using AI coding assistants, but before I do that I want to talk about how I set expectations for my students about how they can use AI in their work.
+
 Since last semester I have been very clear with my students about how they can use AI with their work. I post this information on each assignment's description on the LMS. I also talk about it in class and have a discussion about it.
 
 I created a tool to help me generate the language for these policies. 
@@ -44,26 +58,36 @@ You'll see in a moment that I created this tool using the same 'hands-off' proce
 
 I have found that students feel relieved to have clear guidelines about how they can use AI. 
 
-It also helps them understand that I am not trying to catch them doing something wrong, but rather I am trying to help them use the tools in a way that is ethical and beneficial for their learning.
+It also helps them understand when and where they can use AI and why it is ok sometimes and not ok other times. I am trying to help them use the tools in a way that is ethical and beneficial for their learning.
 
 ### Building an Interactive Tool
 The main focus of this session is to show you how I use AI coding assistants to build interactive tools for my courses.
 
-It turns out that you don't need to know how to code to do this. You just need to be able to have a conversation with an AI model and be able to copy and paste some code into a file.
+It turns out that you don't need to know how to code to do this (or not be an expert). You just need to be able to have a conversation with an AI model and be able to copy and paste some code into a file.
 
-I have been using this process to create simulations, visualizations, and step-by-step demonstrations for my courses. 
+I have been using this process to create: 
+- simulations
+- visualizations
+- step-by-step demonstrations 
+for my courses. 
 
-These are things that I can explain in a more traditional lecture format (and have done many times in the past), using a whiteboard or slides (or with just a lot of hand-waving). These are low stakes demonstrations that help students visualize something that is traditionally hard to see about software development. 
+These are things that I can explain in a more traditional lecture format (and have done many times in the past), using a whiteboard or slides (or with just a lot of hand-waving). 
 
-These are not the most critical learning experiences that I teach in my courses, for those things I rely on my own expertise and experience. However, these tools are a nice *supplement* to my lectures and help students understand the material better.
+These are low stakes demonstrations that help students visualize something that is traditionally hard to see about software development. 
+
+These are not the most critical learning experiences that I teach in my courses, for those things I rely on my own expertise and experience. 
+
+However, these tools are a nice *supplement* to my lectures and help students understand the material better.
 
 As I mentioned earlier, I use an AI coding assistant to help me build these tools. 
 
-I could have written the code for these myself, but it would take me a lot longer to do it. 
+I could have written the code for these myself manually, but it would take me a lot longer to do it. 
 
-These are not important enough learning experiences for me to do it by hand. The great thing about these coding assistants is that they can create visually appealing and interactive tools with very little to no 'hard' coding on my part.
+These are not important enough learning experiences for me to do it by hand. 
 
-These tools do not have a lot of complex logic, they are just a clean way of showing some steps (UI is not my strong suit and this is not where my confidence lies).
+The great thing about these coding assistants is that they can create visually appealing and interactive tools with very little to no 'hard' coding on my part.
+
+These examples that I will show do not have a lot of complex logic, they are just a clean way of showing some simple steps (UI is not my strong suit and this is not where my confidence lies).
 
 For the really important concepts I have other materials that I have created for more than two decades. I don't rely on AI to build those materials for me.
 
@@ -74,16 +98,23 @@ Let me start by showing you an example of a tool that I created for my courses. 
 
 The important thing that I am trying to show in this example is the flow of work on a team of software developers. 
 
+Students get the sense of what happens when working on a team and how the work flows through the team members.
+
+I give a lecture about this and we practice but this is a nice way to see something that is traditionally hard to visualize.
+
 #### Demo 1
 - click through all of the buttons to visualize the workflow
 - on the left is a preview of what they should expect
 - on the right is a log of what happened with explanations
-- I discussed all of these steps in a lecture, then before we practiced with the actual tools I had them use this tool with a partner to get them used to these complicated workflows
 
 If you are teaching accounting or costume design you will definitely have a different concept that you want to demonstrate, but the process of building the tool will be the same.
 
 #### Demo 2
-In this next example, I am showing the students how to work from the terminal. I start with a lecture about how using the terminal is like a hiker climbing a mountain. When I was working with the AI coding assistant I gave it my lecture notes and described the analogy and the technical concepts that I wanted to demonstrate.
+In this next example, I am showing the students how to work from the terminal. 
+
+I start with a lecture about how using the terminal is like a hiker climbing a mountain. 
+
+When I was working with the AI coding assistant I gave it my lecture notes and described the analogy and the technical concepts that I wanted to demonstrate.
 
 [Show Terminal Tool](https://markm208.github.io/vibeCodingInClassTools/cli-hiker.html)
 
@@ -96,9 +127,17 @@ and then walk through it using my computer and a projector. Then, I'd have the s
 Now, I have them use this tool to get used to the concepts and the workflow before they start working on the lab problem.
 
 ### Building a Tool from Scratch
-The way that I use the AI coding assistants is to start with a request for a single page web app that uses html, css, and javascript. I ask it to have a particular look and feel and then I ask it to satisfy some particular requirements that I have for the tool.
+The way that I use the AI coding assistants is to start with a request for: 
 
-I then have a conversation with the model about how to improve the tool and add features to it. So far, it has never been able to get everything right on the first try. I often have to ask it revise its work 20-40 times before I am happy with the result.
+- **a single page web app that uses html, css, and javascript.** 
+
+I ask it to have a particular look and feel and then I ask it to satisfy some particular requirements that I have for the tool.
+
+I then have a conversation with the AI model about how to improve the tool and add features to it. 
+
+So far, it has never been able to get everything right on the first try. I often have to ask it revise its work. 
+
+The three examples I am showing today took about 20-40 different interactions before I was happy with the results.
 
 Here is the log of my conversation with the model as I was building the terminal tool:
 
@@ -225,7 +264,8 @@ Also, the whole mountain pic feels a little cramped, can you make it a bit wider
 29. Add an icon (a gear or something) that when clicked a modal dialog appears with a set of instructions about how to use this tool. Make sure a newcomer will know all of the things that they can do with the tool.
 
 Upload file into Claude:
-/Users/mmahoney/Dropbox/CSC3520/code-examples/hikingCLI/index.html
+~~/Users/mmahoney/Dropbox/CSC3520/code-examples/hikingCLI/index.html~~
+file:///Users/mmahoney/Downloads/cli-tutorial.html
 
 The conversation went back and forth. I can characterize the communication as:
 - I started by asking for some ideas without really knowing exactly what I wanted. It built something that was interesting but not what I wanted.
@@ -236,6 +276,9 @@ The conversation went back and forth. I can characterize the communication as:
 I did not look at the code once (I have still not looked at it). The AI assistant wrote it all to a single html file that I opened with my browser and then I had my conversation about it.
 
 You can do the same thing. You can start with a simple request for a single page web app that demonstrates a concept that you want to teach. Then you can have a conversation with the model about how to improve it and add features to it.
+
+### Step-by-Step Workflow
+Go over the steps 
 
 ### Conclusion
 I hope that this has given you some ideas about how you can use AI to build interactive tools for your courses. You don't need to know how to code to do this. You just need to be able to have a conversation with an AI model and be able to copy and paste some code into a file.
