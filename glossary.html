@@ -137,6 +137,17 @@
             max-width: 300px;
         }
 
+        .demo-textarea {
+            padding: 0.5rem;
+            font-size: 1rem;
+            font-family: inherit;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 400px;
+            resize: vertical;
+        }
+
         .demo-checkbox-group, .demo-radio-group {
             display: flex;
             flex-direction: column;
@@ -849,6 +860,30 @@ button {
     </div>
 
     <div class="term">
+        <div class="term-name">Text Area (Multiline Textbox)</div>
+        <div class="term-desc">
+            A larger rectangular area where users can type multiple lines of text. Text areas are used for longer responses like comments, feedback, or descriptions.
+        </div>
+        <div class="analogy">A blank section on a form with multiple lines for writing a longer response.</div>
+        <div class="example-box">
+            <div class="example-label">Try it: Type multiple lines of text</div>
+            <textarea class="demo-textarea" rows="4" placeholder="Write your comments here..."></textarea>
+        </div>
+        <div class="code-snippet">
+            <button class="code-snippet-toggle" onclick="toggleCodeSnippet(this)">
+                <span class="icon">&#9654;</span> See what the code looks like
+            </button>
+            <div class="code-snippet-content">
+                <pre><code>&lt;textarea rows="4" placeholder="Write your comments here..."&gt;
+&lt;/textarea&gt;</code></pre>
+            </div>
+        </div>
+        <div class="capability-note">
+            <strong>You can ask for:</strong> "Add a text area for longer responses" or "Let users write multiple lines of [feedback/comments/description]"
+        </div>
+    </div>
+
+    <div class="term">
         <div class="term-name">Checkbox</div>
         <div class="term-desc">
             A small square that can be checked or unchecked. Checkboxes allow users to select <em>multiple options</em> from a list (unlike radio buttons).
@@ -1129,6 +1164,7 @@ button {
             <li>"When users <strong>hover</strong> over a term, show a <strong>tooltip</strong> with its definition"</li>
             <li>"Add a <strong>dropdown</strong> that lets users select their department"</li>
             <li>"Add a <strong>textbox</strong> where users can type their response"</li>
+            <li>"Add a <strong>text area</strong> so users can write longer comments or feedback"</li>
             <li>"Use <strong>checkboxes</strong> so students can select multiple learning objectives"</li>
             <li>"Use <strong>radio buttons</strong> for the quiz so only one answer can be selected"</li>
             <li>"Show the instructions in a <strong>modal dialog</strong> when the page loads"</li>
