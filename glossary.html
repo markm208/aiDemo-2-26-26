@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Glossary for Non-Programmers</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            color: #333;
+        }
+        h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.25rem;
+            color: #1a1a1a;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+        .intro {
+            border: rgb(86, 43, 226) 2px solid;
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        .intro p {
+            margin-bottom: 0.75rem;
+        }
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+        h2 {
+            font-size: 1.1rem;
+            margin-top: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: #1a1a1a;
+            border-bottom: 2px solid #e63946;
+            padding-bottom: 0.25rem;
+        }
+        .term {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid #457b9d;
+            margin-bottom: 1rem;
+        }
+        .term-name {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+        .term-desc {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 0.75rem;
+        }
+        .term-desc p {
+            margin-bottom: 0.5rem;
+        }
+        .term-desc p:last-child {
+            margin-bottom: 0;
+        }
+        .analogy {
+            font-size: 0.85rem;
+            color: #2a9d8f;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        .analogy::before {
+            content: "Think of it like: ";
+            font-weight: 600;
+        }
+        .example-box {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 1rem;
+            margin-top: 0.75rem;
+        }
+        .example-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #888;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        code {
+            background: #e9ecef;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.85em;
+        }
+
+        /* Interactive example styles */
+        .demo-hover-box {
+            background: #457b9d;
+            color: white;
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .demo-hover-box:hover {
+            background: #e63946;
+            transform: scale(1.05);
+        }
+
+        .demo-dropdown {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            min-width: 200px;
+        }
+
+        .demo-textbox {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .demo-checkbox-group, .demo-radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .demo-checkbox-group label, .demo-radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .demo-checkbox-group input, .demo-radio-group input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .demo-btn {
+            background: #e63946;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .demo-btn:hover {
+            background: #c1121f;
+        }
+
+        /* Modal styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+        }
+        .modal-content h3 {
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+        .modal-content p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        .modal-close {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.75rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #888;
+        }
+        .modal-close:hover {
+            color: #333;
+        }
+
+        /* Button styles */
+        .demo-btn-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .demo-btn-secondary {
+            background: #457b9d;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .demo-btn-secondary:hover {
+            background: #2a6f97;
+        }
+        .demo-btn-outline {
+            background: transparent;
+            color: #e63946;
+            border: 2px solid #e63946;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .demo-btn-outline:hover {
+            background: #e63946;
+            color: white;
+        }
+
+        /* Link styles */
+        .demo-link {
+            color: #457b9d;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .demo-link:hover {
+            color: #2a6f97;
+        }
+
+        /* Tooltip styles */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip-trigger {
+            background: #457b9d;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: help;
+            display: inline-block;
+        }
+        .tooltip-text {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1a1a1a;
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            margin-bottom: 0.5rem;
+            transition: opacity 0.2s;
+            z-index: 100;
+        }
+        .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #1a1a1a;
+        }
+        .tooltip-container:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Toggle/Switch styles */
+        .demo-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 26px;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.3s;
+            border-radius: 26px;
+        }
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+        .toggle-switch input:checked + .toggle-slider {
+            background-color: #2a9d8f;
+        }
+        .toggle-switch input:checked + .toggle-slider:before {
+            transform: translateX(24px);
+        }
+        .toggle-label {
+            font-size: 0.9rem;
+        }
+
+        /* Slider/Range styles */
+        .demo-slider-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .demo-slider {
+            width: 100%;
+            max-width: 300px;
+            height: 8px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #ddd;
+            border-radius: 4px;
+            outline: none;
+        }
+        .demo-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #e63946;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .demo-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #e63946;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+        .slider-value {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Tabs styles */
+        .demo-tabs {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .tab-buttons {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+        .tab-btn:hover {
+            background: #e9ecef;
+        }
+        .tab-btn.active {
+            background: white;
+            border-bottom-color: #e63946;
+            font-weight: 600;
+        }
+        .tab-content {
+            padding: 1rem;
+        }
+        .tab-pane {
+            display: none;
+        }
+        .tab-pane.active {
+            display: block;
+        }
+
+        /* Accordion styles */
+        .demo-accordion {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .accordion-item {
+            border-bottom: 1px solid #ddd;
+        }
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+        .accordion-header {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: #f8f9fa;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+        .accordion-header:hover {
+            background: #e9ecef;
+        }
+        .accordion-icon {
+            transition: transform 0.2s;
+        }
+        .accordion-item.open .accordion-icon {
+            transform: rotate(180deg);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: white;
+        }
+        .accordion-item.open .accordion-content {
+            max-height: 200px;
+        }
+        .accordion-body {
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .capability-note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 0.75rem 1rem;
+            margin-top: 0.5rem;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.85rem;
+        }
+        .capability-note strong {
+            color: #856404;
+        }
+
+        /* Code snippet accordion styles */
+        .code-snippet {
+            margin-top: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .code-snippet-toggle {
+            background: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 0.4rem 0.75rem;
+            font-size: 0.8rem;
+            color: #666;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: all 0.2s;
+        }
+        .code-snippet-toggle:hover {
+            background: #f8f9fa;
+            border-color: #999;
+            color: #333;
+        }
+        .code-snippet-toggle .icon {
+            transition: transform 0.2s;
+            font-size: 0.7rem;
+        }
+        .code-snippet.open .code-snippet-toggle .icon {
+            transform: rotate(90deg);
+        }
+        .code-snippet-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            width: 100%;
+        }
+        .code-snippet.open .code-snippet-content {
+            max-height: 200px;
+        }
+        .code-snippet pre {
+            background: #1a1a1a;
+            color: #f8f8f2;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            margin: 0.5rem 0 0 0;
+        }
+        .code-snippet code {
+            background: none;
+            padding: 0;
+            color: inherit;
+            font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: #457b9d;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">&larr; Back to main handout</a>
+
+    <h1>Web Development Glossary</h1>
+    <p class="subtitle">A guide for non-programmers to understand what AI can build</p>
+
+    <div class="intro">
+        <p>
+            When you ask AI to build interactive tools, it creates them using web technologies. 
+            This glossary explains the technical terms so you can better describe what you want and understand what's possible. 
+        </p>
+        <p>
+            When you converse with your coding assistant you should use these terms.
+            <strong>Try the interactive examples below!</strong>
+        </p>
+    </div>
+
+    <h2>The Building Blocks: Web Technologies</h2>
+
+    <div class="term">
+        <div class="term-name">HTML (HyperText Markup Language)</div>
+        <div class="term-desc">
+            The language that defines the <em>content and structure</em> of a web page. It specifies what elements appear on the page: headings, paragraphs, buttons, images, etc.
+        </div>
+        <div class="analogy">The blueprint of a house that shows where the rooms and doors go.</div>
+        <div class="code-snippet">
+            <button class="code-snippet-toggle" onclick="toggleCodeSnippet(this)">
+                <span class="icon">&#9654;</span> See what the code looks like
+            </button>
+            <div class="code-snippet-content">
+                <pre><code>&lt;h1&gt;Welcome to My Page&lt;/h1&gt;
+&lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+&lt;button&gt;Click Me&lt;/button&gt;</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="term">
+        <div class="term-name">CSS (Cascading Style Sheets)</div>
+        <div class="term-desc">
+            The language that defines the <em>visual appearance</em> of a web page. It controls colors, fonts, spacing, sizes, and layout.
+        </div>
+        <div class="analogy">The interior design choices: paint colors, furniture styles, and decorations.</div>
+        <div class="code-snippet">
+            <button class="code-snippet-toggle" onclick="toggleCodeSnippet(this)">
+                <span class="icon">&#9654;</span> See what the code looks like
+            </button>
+            <div class="code-snippet-content">
+                <pre><code>h1 {
+  color: blue;
+  font-size: 24px;
+}
+button {
+  background-color: red;
+  padding: 10px;
+}</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="term">
+        <div class="term-name">JavaScript</div>
+        <div class="term-desc">
+            The language that makes web pages <em>interactive</em>. It responds to user actions, updates content dynamically, and creates the "behavior" of the page.
+        </div>
+        <div class="analogy">The electrical and mechanical systems that make lights turn on when you flip a switch.</div>
+        <div class="code-snippet">
+            <button class="code-snippet-toggle" onclick="toggleCodeSnippet(this)">
+                <span class="icon">&#9654;</span> See what the code looks like
+            </button>
+            <div class="code-snippet-content">
+                <pre><code>button.onclick = function() {
+  alert('You clicked the button!');
+}</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <h2>Page Structure Terms</h2>
+
+    <div class="term">
+        <div class="term-name">Element</div>
+        <div class="term-desc">
+            <p>
+                Any individual component on a web page. A button is an element. A paragraph is an element. An image is an element. Everything you see on a page is made up of elements.
+            </p>
+            <p>
+                Elements can be styled with many visual properties. You can change an element's <strong>font color</strong>, <strong>background color</strong>, <strong>border</strong>, <strong>padding</strong> (space inside the element), <strong>margin</strong> (space outside the element), <strong>font size</strong>, <strong>font family</strong>, and much more. These are the kinds of things you can ask AI to adjust when you want to change how something looks.
+            </p>
+            <p>
+                A <strong>div</strong> (short for "division") is a generic container element used to group other elements together. Divs are invisible boxes that help organize the page layout.
+            </p>
+        </div>
+        <div class="analogy">Elements are like pieces of furniture in a room. A div is like a shelf that holds and organizes other items within it.</div>
+        <div class="code-snippet">
+            <button class="code-snippet-toggle" onclick="toggleCodeSnippet(this)">
+                <span class="icon">&#9654;</span> See what the code looks like
+            </button>
+            <div class="code-snippet-content">
+                <pre><code>&lt;div class="sidebar"&gt;
+  &lt;h2&gt;Navigation&lt;/h2&gt;
+  &lt;a href="home.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <h2>Interactions</h2>
+
+    <div class="term">
+        <div class="term-name">Hover</div>
+        <div class="term-desc">
+            What happens when you move your mouse cursor over an element without clicking. Web pages can detect this and respond by changing appearance or showing additional information.
+        </div>
+        <div class="analogy">Walking past a motion-sensor light that turns on when you get close.</div>
+        <div class="example-box">
+            <div class="example-label">Try it: Move your mouse over this box</div>
+            <div class="demo-hover-box">
+                Hover over me!
+            </div>
+        </div>
+        <div class="code-snippet">
+            <button class="code-snippet-toggle" onclick="toggleCodeSnippet(this)">
+                <span class="icon">&#9654;</span> See what the code looks like
+            </button>
+            <div class="code-snippet-content">
+                <pre><code>.box:hover {
+  background-color: red;
+  transform: scale(1.05);
+}</code></pre>
+            </div>
+        </div>
+        <div class="capability-note">
+            <strong>You can ask for:</strong> "When someone hovers over [element], show [information]" or "Change the color when hovering"
+        </div>
+    </div>
+
+    <div class="term">
+        <div class="term-name">Tooltip</div>
+        <div class="term-desc">
+            A small text label that appears when you hover over an element. Tooltips provide additional information without cluttering the main interface.
+        </div>
+        <div class="analogy">The small explanatory placard next to an exhibit in a museum.</div>
+        <div class="example-box">
+            <div class="example-label">Try it: Hover over the element below</div>
+            <div class="tooltip-container">
+                <span class="tooltip-trigger">Hover for more info</span>
+                <span class="tooltip-text">This is a tooltip! It provides extra context.</span>
+            </div>
+        </div>
+        <div class="code-snippet">
+            <button class="code-snippet-toggle" onclick="toggleCodeSnippet(this)">
+                <span class="icon">&#9654;</span> See what the code looks like
+            </button>
+            <div class="code-snippet-content">
+                <pre><code>&lt;span class="tooltip-trigger"&gt;Hover for more info&lt;/span&gt;
+&lt;span class="tooltip-text"&gt;
+  This is a tooltip! It provides extra context.
+&lt;/span&gt;</code></pre>
+            </div>
+        </div>
+        <div class="capability-note">
+            <strong>You can ask for:</strong> "Show a tooltip with [explanation] when hovering over [element]" or "Add helper text that appears on hover"
+        </div>
+    </div>
+
+    <h2>User Interface Components</h2>
+    <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">These are the interactive elements users can manipulate. Each example below is fully functional.</p>
+
+    <div class="term">
+        <div class="term-name">Button</div>
+        <div class="term-desc">
+            A clickable element that triggers an action. Buttons can have different styles to indicate their importance: primary buttons for main actions, secondary for alternatives, and outline buttons for less prominent options.
+        </div>
+        <div class="analogy">A doorbell or elevator button that makes something happen when pressed.</div>
+        <div class="example-box">
+            <div class="example-label">Try it: Click any button (these show an alert)</div>
+            <div class="demo-btn-group">
+                <button class="demo-btn" onclick="alert('You clicked the primary button!')">Primary</button>
+                <button class="demo-btn-secondary" onclick="alert('You clicked the secondary button!')">Secondary</button>
+                <button class="demo-btn-outline" onclick="alert('You clicked the outline button!')">Outline</button>
+            </div>
+        </div>
+        <div class="code-snippet">
+            <button class="code-snippet-toggle" onclick="toggleCodeSnippet(this)">
+                <span class="icon">&#9654;</span> See what the code looks like
+            </button>
+            <div class="code-snippet-content">
+                <pre><code>&lt;button&gt;Primary&lt;/button&gt;
+&lt;button&gt;Secondary&lt;/button&gt;
+&lt;button&gt;Outline&lt;/button&gt;</code></pre>
+            </div>
+        </div>
+        <div class="capability-note">
+            <strong>You can ask for:</strong> "Add a button that [does action]" or "Make the submit button more prominent" or "Add a cancel button"
+        </div>
+    </div>
+
+    <div class="term">
+        <div class="term-name">Link (Hyperlink)</div>
+        <div class="term-desc">
+            Text that navigates to another page or location when clicked. Links are typically underlined and colored differently from regular text. Unlike buttons (which perform actions), links take you somewhere else.
+        </div>
+        <div class="analogy">A cross-reference in a book that says "see page 42."</div>
+        <div class="example-box">
+            <div class="example-label">Try it: Click the link</div>
+            <p>Learn more about web development at <a href="https://developer.mozilla.org" class="demo-link">MDN Web Docs</a>.</p>
+        </div>
+        <div class="code-snippet">
+            <button class="code-snippet-toggle" onclick="toggleCodeSnippet(this)">
+                <span class="icon">&#9654;</span> See what the code looks like
+            </button>
+            <div class="code-snippet-content">
+                <pre><code>Learn more about web development at &lt;a href="https://developer.mozilla.org"&gt;MDN Web Docs&lt;/a&gt;</code></pre>
+            </div>
+        </div>
+        <div class="capability-note">
+            <strong>You can ask for:</strong> "Add a link to [resource]" or "Make [text] clickable to go to [destination]"
+        </div>
+    </div>
+
+    <div class="term">
+        <div class="term-name">Dropdown (Select Menu)</div>
+        <div class="term-desc">
+            A menu that expands to show a list of options when clicked. The user can select one option, and the menu collapses to show only their choice.
+        </div>
+        <div class="analogy">A filing cabinet drawer that opens to reveal folders inside.</div>
+        <div class="example-box">
+            <div class="example-label">Try it: Click to see options</div>
+            <select class="demo-dropdown">
+                <option value="">Choose a subject...</option>
+                <option value="history">History</option>
+                <option value="literature">Literature</option>
+                <option value="philosophy">Philosophy</option>
+                <option value="art">Art History</option>
+            </select>
+        </div>
+        <div class="code-snippet">
+            <button class="code-snippet-toggle" onclick="toggleCodeSnippet(this)">
+                <span class="icon">&#9654;</span> See what the code looks like
+            </button>
+            <div class="code-snippet-content">
+                <pre><code>&lt;select&gt;
+  &lt;option&gt;Choose a subject...&lt;/option&gt;
+  &lt;option&gt;History&lt;/option&gt;
+  &lt;option&gt;Literature&lt;/option&gt;
+  &lt;option&gt;Philosophy&lt;/option&gt;
+  &lt;option&gt;Art History&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+            </div>
+        </div>
+        <div class="capability-note">
+            <strong>You can ask for:</strong> "Add a dropdown to select [categories]" or "Let users filter by [criteria] using a dropdown"
+        </div>
+    </div>
+
+    <div class="term">
+        <div class="term-name">Textbox (Text Input / Text Field)</div>
+        <div class="term-desc">
+            A rectangular area where users can type text. Can be a single line (for short input like names) or multiple lines (for longer content like comments).
+        </div>
+        <div class="analogy">A blank line on a paper form where you write your answer.</div>
+        <div class="example-box">
+            <div class="example-label">Try it: Type something</div>
+            <input type="text" class="demo-textbox" placeholder="Type your name here...">
+        </div>
+        <div class="code-snippet">
+            <button class="code-snippet-toggle" onclick="toggleCodeSnippet(this)">
+                <span class="icon">&#9654;</span> See what the code looks like
+            </button>
+            <div class="code-snippet-content">
+                <pre><code>&lt;input type="text" placeholder="Type your name here..."&gt;</code></pre>
+            </div>
+        </div>
+        <div class="capability-note">
+            <strong>You can ask for:</strong> "Add a textbox where users can enter [information]" or "Let users type their [response/answer/query]"
+        </div>
+    </div>
+
+    <div class="term">
+        <div class="term-name">Checkbox</div>
+        <div class="term-desc">
+            A small square that can be checked or unchecked. Checkboxes allow users to select <em>multiple options</em> from a list (unlike radio buttons).
+        </div>
+        <div class="analogy">A to-do list where you can check off multiple completed tasks.</div>
+        <div class="example-box">
+            <div class="example-label">Try it: Select any that apply (you can choose multiple)</div>
+            <div class="demo-checkbox-group">
+                <label><input type="checkbox"> I teach undergraduate courses</label>
+                <label><input type="checkbox"> I teach graduate courses</label>
+                <label><input type="checkbox"> I supervise research</label>
+                <label><input type="checkbox"> I advise students</label>
+            </div>
+        </div>
+        <div class="code-snippet">
+            <button class="code-snippet-toggle" onclick="toggleCodeSnippet(this)">
+                <span class="icon">&#9654;</span> See what the code looks like
+            </button>
+            <div class="code-snippet-content">
+                <pre><code>&lt;label&gt;
+  &lt;input type="checkbox"&gt; I teach undergraduate courses
+&lt;/label&gt;
+&lt;label&gt;
+  &lt;input type="checkbox"&gt; I teach graduate courses
+&lt;/label&gt;</code></pre>
+            </div>
+        </div>
+        <div class="capability-note">
+            <strong>You can ask for:</strong> "Add checkboxes so users can select multiple [options]" or "Let users check off [items] as they complete them"
+        </div>
+    </div>
+
+    <div class="term">
+        <div class="term-name">Radio Buttons</div>
+        <div class="term-desc">
+            Small circles that can be selected. Unlike checkboxes, radio buttons only allow <em>one choice</em> from a group. Selecting one automatically deselects the others.
+        </div>
+        <div class="analogy">Multiple choice questions on an exam where you can only bubble in one answer.</div>
+        <div class="example-box">
+            <div class="example-label">Try it: Select one option (only one allowed)</div>
+            <div class="demo-radio-group">
+                <label><input type="radio" name="experience"> Beginner - New to this topic</label>
+                <label><input type="radio" name="experience"> Intermediate - Some familiarity</label>
+                <label><input type="radio" name="experience"> Advanced - Extensive experience</label>
+            </div>
+        </div>
+        <div class="code-snippet">
+            <button class="code-snippet-toggle" onclick="toggleCodeSnippet(this)">
+                <span class="icon">&#9654;</span> See what the code looks like
+            </button>
+            <div class="code-snippet-content">
+                <pre><code>&lt;label&gt;
+  &lt;input type="radio" name="experience"&gt; Beginner - New to this topic
+&lt;/label&gt;
+&lt;label&gt;
+  &lt;input type="radio" name="experience"&gt; Intermediate - Some familiarity
+&lt;/label&gt;
+&lt;label&gt;
+  &lt;input type="radio" name="experience"&gt; Advanced - Extensive experience
+&lt;/label&gt;</code></pre>
+            </div>
+        </div>
+        <div class="capability-note">
+            <strong>You can ask for:</strong> "Add radio buttons so users must choose one [option]" or "Make it so only one [choice] can be selected at a time"
+        </div>
+    </div>
+
+    <div class="term">
+        <div class="term-name">Modal Dialog (Popup Window)</div>
+        <div class="term-desc">
+            A window that appears on top of the main page, usually requiring the user's attention before they can continue. The background is often dimmed to focus attention on the modal. Used for important messages, forms, or confirmations.
+        </div>
+        <div class="analogy">A person stepping in front of you to ask an important question before you continue walking.</div>
+        <div class="example-box">
+            <div class="example-label">Try it: Click the button to open a modal</div>
+            <button class="demo-btn" onclick="openModal()">Open Modal Dialog</button>
+        </div>
+        <div class="code-snippet">
+            <button class="code-snippet-toggle" onclick="toggleCodeSnippet(this)">
+                <span class="icon">&#9654;</span> See what the code looks like
+            </button>
+            <div class="code-snippet-content">
+                <pre><code>&lt;div class="modal"&gt;
+  &lt;button class="close"&gt;&amp;times;&lt;/button&gt;
+  &lt;h3&gt;This is a Modal Dialog&lt;/h3&gt;
+  &lt;p&gt;Notice how the background is dimmed...&lt;/p&gt;
+  &lt;button&gt;Close This Modal&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+        <div class="capability-note">
+            <strong>You can ask for:</strong> "Show a popup when users click [button]" or "Display instructions in a modal dialog" or "Ask for confirmation before [action]"
+        </div>
+    </div>
+
+    <div class="term">
+        <div class="term-name">Toggle (Switch)</div>
+        <div class="term-desc">
+            An on/off control that slides between two states. Toggles are used for binary choices where the change takes effect immediately, without needing a separate "save" button.
+        </div>
+        <div class="analogy">A light switch that turns something on or off.</div>
+        <div class="example-box">
+            <div class="example-label">Try it: Click the toggle to switch states</div>
+            <div class="demo-toggle">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="demoToggle" onchange="updateToggleLabel()">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label" id="toggleLabel">Notifications: Off</span>
+            </div>
+        </div>
+        <div class="code-snippet">
+            <button class="code-snippet-toggle" onclick="toggleCodeSnippet(this)">
+                <span class="icon">&#9654;</span> See what the code looks like
+            </button>
+            <div class="code-snippet-content">
+                <pre><code>&lt;label class="toggle-switch"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span class="toggle-slider"&gt;&lt;/span&gt;
+&lt;/label&gt;
+&lt;span&gt;Notifications: Off&lt;/span&gt;</code></pre>
+            </div>
+        </div>
+        <div class="capability-note">
+            <strong>You can ask for:</strong> "Add a toggle to enable/disable [feature]" or "Let users turn [setting] on or off with a switch"
+        </div>
+    </div>
+
+    <div class="term">
+        <div class="term-name">Slider (Range Input)</div>
+        <div class="term-desc">
+            A control that lets users select a value by dragging along a track. Sliders are ideal for selecting from a continuous range of values, like volume, brightness, or a year range.
+        </div>
+        <div class="analogy">A volume knob or dimmer switch that you slide to adjust levels.</div>
+        <div class="example-box">
+            <div class="example-label">Try it: Drag the slider</div>
+            <div class="demo-slider-container">
+                <input type="range" class="demo-slider" min="0" max="100" value="50" id="demoSlider" oninput="updateSliderValue()">
+                <span class="slider-value">Font size: <span id="sliderValue">50</span>%</span>
+            </div>
+        </div>
+        <div class="code-snippet">
+            <button class="code-snippet-toggle" onclick="toggleCodeSnippet(this)">
+                <span class="icon">&#9654;</span> See what the code looks like
+            </button>
+            <div class="code-snippet-content">
+                <pre><code>&lt;input type="range" min="0" max="100" value="50"&gt;</code></pre>
+            </div>
+        </div>
+        <div class="capability-note">
+            <strong>You can ask for:</strong> "Add a slider to adjust [value]" or "Let users select a range between [min] and [max]"
+        </div>
+    </div>
+
+    <div class="term">
+        <div class="term-name">Tabs</div>
+        <div class="term-desc">
+            A way to organize content into separate sections that users can switch between without leaving the page. Only one tab's content is visible at a time.
+        </div>
+        <div class="analogy">Dividers in a binder that let you flip to different sections.</div>
+        <div class="example-box">
+            <div class="example-label">Try it: Click different tabs</div>
+            <div class="demo-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+                    <button class="tab-btn" onclick="switchTab('details')">Details</button>
+                    <button class="tab-btn" onclick="switchTab('examples')">Examples</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab-overview">
+                        This is the Overview tab. It shows introductory content.
+                    </div>
+                    <div class="tab-pane" id="tab-details">
+                        This is the Details tab. It shows more in-depth information.
+                    </div>
+                    <div class="tab-pane" id="tab-examples">
+                        This is the Examples tab. It shows practical demonstrations.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code-snippet">
+            <button class="code-snippet-toggle" onclick="toggleCodeSnippet(this)">
+                <span class="icon">&#9654;</span> See what the code looks like
+            </button>
+            <div class="code-snippet-content">
+                <pre><code>&lt;div class="tab-buttons"&gt;
+  &lt;button class="tab-btn"&gt;Overview&lt;/button&gt;
+  &lt;button class="tab-btn"&gt;Details&lt;/button&gt;
+  &lt;button class="tab-btn"&gt;Examples&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="tab-content"&gt;
+  This is the Overview tab...
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+        <div class="capability-note">
+            <strong>You can ask for:</strong> "Organize this into tabs" or "Add tabs so users can switch between [sections]"
+        </div>
+    </div>
+
+    <div class="term">
+        <div class="term-name">Accordion</div>
+        <div class="term-desc">
+            Stacked sections that expand and collapse when clicked. Accordions save space by showing only the headers until users click to reveal content. Common for FAQs and organized lists.
+        </div>
+        <div class="analogy">A folded paper fan or a filing system where you pull out one drawer at a time.</div>
+        <div class="example-box">
+            <div class="example-label">Try it: Click any header to expand/collapse</div>
+            <div class="demo-accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>What is an accordion?</span>
+                        <span class="accordion-icon">&#9660;</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            An accordion is a UI pattern where content is hidden by default and revealed when the user clicks on a header. It helps organize information in a compact way.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>When should I use one?</span>
+                        <span class="accordion-icon">&#9660;</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            Accordions work well for FAQs, long lists of information, or any content where users only need to see one section at a time.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Can multiple sections be open?</span>
+                        <span class="accordion-icon">&#9660;</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            Yes! This example allows multiple sections to be open at once, but you can also design it so only one section can be open at a time.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code-snippet">
+            <button class="code-snippet-toggle" onclick="toggleCodeSnippet(this)">
+                <span class="icon">&#9654;</span> See what the code looks like
+            </button>
+            <div class="code-snippet-content">
+                <pre><code>&lt;div class="accordion"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;button class="accordion-header"&gt;
+      What is an accordion?
+    &lt;/button&gt;
+    &lt;div class="accordion-content"&gt;
+      An accordion is a UI pattern where...
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+        <div class="capability-note">
+            <strong>You can ask for:</strong> "Put this content in an accordion" or "Make the FAQ sections expandable/collapsible"
+        </div>
+    </div>
+
+    <h2>Putting It All Together</h2>
+
+    <div class="term" style="border-left-color: #2a9d8f;">
+        <div class="term-name">How to Ask for What You Want</div>
+        <div class="term-desc">
+            When requesting changes or new features, you can now use these terms precisely:
+        </div>
+        <ul style="font-size: 0.9rem; padding-left: 1.5rem; margin-top: 0.5rem;">
+            <li>"Add a <strong>button</strong> that submits the form"</li>
+            <li>"Include a <strong>link</strong> to the course syllabus"</li>
+            <li>"When users <strong>hover</strong> over a term, show a <strong>tooltip</strong> with its definition"</li>
+            <li>"Add a <strong>dropdown</strong> that lets users select their department"</li>
+            <li>"Add a <strong>textbox</strong> where users can type their response"</li>
+            <li>"Use <strong>checkboxes</strong> so students can select multiple learning objectives"</li>
+            <li>"Use <strong>radio buttons</strong> for the quiz so only one answer can be selected"</li>
+            <li>"Show the instructions in a <strong>modal dialog</strong> when the page loads"</li>
+            <li>"Add a <strong>toggle</strong> to switch between light and dark mode"</li>
+            <li>"Use a <strong>slider</strong> to let users adjust the difficulty level"</li>
+            <li>"Organize the content into <strong>tabs</strong> for different topics"</li>
+            <li>"Put the FAQ in an <strong>accordion</strong> so users can expand each question"</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <strong>Remember:</strong> Your main job is to describe what you want to see or what you want users to experience, and the AI will handle the implementation. You rarely have to work with the code directly.
+        <br><br>
+        <a href="index.html" class="back-link">&larr; Back to main handout</a>
+        <!-- <a href="index.html">&larr; Back to main handout</a> -->
+    </div>
+
+    <!-- Modal Dialog (hidden by default) -->
+    <div class="modal-overlay" id="demoModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h3>This is a Modal Dialog</h3>
+            <p>Notice how the background is dimmed and you must interact with this window before continuing.</p>
+            <p>Modals are useful for:</p>
+            <ul style="font-size: 0.9rem; padding-left: 1.5rem; margin-bottom: 1rem;">
+                <li>Displaying instructions</li>
+                <li>Confirming important actions</li>
+                <li>Showing additional information</li>
+                <li>Collecting user input</li>
+            </ul>
+            <button class="demo-btn" onclick="closeModal()">Close This Modal</button>
+        </div>
+    </div>
+
+    <script>
+        // Modal functions
+        function openModal() {
+            document.getElementById('demoModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('demoModal').classList.remove('active');
+        }
+
+        // Close modal when clicking outside of it
+        document.getElementById('demoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Toggle function
+        function updateToggleLabel() {
+            const toggle = document.getElementById('demoToggle');
+            const label = document.getElementById('toggleLabel');
+            label.textContent = 'Notifications: ' + (toggle.checked ? 'On' : 'Off');
+        }
+
+        // Slider function
+        function updateSliderValue() {
+            const slider = document.getElementById('demoSlider');
+            document.getElementById('sliderValue').textContent = slider.value;
+        }
+
+        // Tabs function
+        function switchTab(tabName) {
+            // Remove active from all buttons and panes
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+
+            // Add active to clicked button and corresponding pane
+            event.target.classList.add('active');
+            document.getElementById('tab-' + tabName).classList.add('active');
+        }
+
+        // Accordion function
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            item.classList.toggle('open');
+        }
+
+        // Code snippet toggle function
+        function toggleCodeSnippet(button) {
+            const snippet = button.parentElement;
+            snippet.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

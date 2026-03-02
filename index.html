@@ -94,7 +94,7 @@
             color: #e63946;
             word-break: break-all;
         }
-        .tool .secondary-link {
+        .secondary-link, .tool .secondary-link {
             display: inline-block;
             margin-top: 0.5rem;
             font-size: 0.8rem;
@@ -104,7 +104,7 @@
             border-radius: 4px;
             text-decoration: none;
         }
-        .tool .secondary-link:hover {
+        .secondary-link:hover, .tool .secondary-link:hover {
             background: #d1e9f0;
         }
         .two-col {
@@ -161,8 +161,15 @@
             margin-top: 2rem;
             padding-top: 1rem;
             border-top: 1px solid #ddd;
-            font-size: 1.15rem;
+            font-size: 0.85rem;
             color: #666;
+        }
+        .footer a {
+            color: #457b9d;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -208,9 +215,15 @@
             <div class="tool-name">CLI Mountain Explorer</div>
             <div class="tool-desc">Learn command-line navigation through a hiking analogy</div>
             <a href="https://markm208.github.io/vibeCodingInClassTools/cli-hiker.html" target="_blank">markm208.github.io/vibeCodingInClassTools/cli-hiker.html</a>
-            <br><a href="conversation-log.html" target="_blank" class="secondary-link">View the 29-step conversation that built this tool →</a>
+            <br><a href="conversation-log.html" class="secondary-link">View the 29-step conversation that built this tool →</a>
         </div>
     </div>
+
+    <h2>New to Web Development?</h2>
+    <p style="font-size: 0.9rem; color: #555; margin-bottom: 0.5rem;">
+        If terms like "dropdown," "modal dialog," or "hover" are unfamiliar, check out the glossary. It explains these concepts with interactive examples you can try, so you'll know exactly what you can ask AI to build.
+    </p>
+    <a href="glossary.html" class="secondary-link">View the Web Development Glossary →</a>
 
     <h2>The Process: Building a Tool</h2>
     <div class="process">
